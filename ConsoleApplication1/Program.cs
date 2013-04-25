@@ -33,10 +33,14 @@ namespace ConsoleApplication1
     {
         public override IEnumerable<T> GetTs<T>()
         {
+            var foo = new List<T>();
+
             foreach (var t in base.GetTs<T>())
             {
-                yield return t;
+                foo.Add(t);
             }
+
+            return foo;
         }
     } 
 
